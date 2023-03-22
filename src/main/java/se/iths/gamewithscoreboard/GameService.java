@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -70,6 +69,7 @@ public class GameService {
     public void enterScoreBoard(String user) {
         player = findUser(user);
         player.addToList(result);
+        player.setTimeOfLastResult();
         player.setAverage();
         player = repository.save(player);
 

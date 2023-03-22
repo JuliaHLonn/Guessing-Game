@@ -6,9 +6,12 @@
 </head>
 <body>
 <h2>Scoreboard</h2>
+
 <p th:each="p : ${toplist}">
     <span th:text="${p.userName}"></span>
     <span th:text="${p.average}"></span>
+    <span th:text="${p.timeOfLastResult}"></span>
+
 </p>
 </body>
 </html>

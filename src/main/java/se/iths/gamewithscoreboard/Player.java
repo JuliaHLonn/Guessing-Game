@@ -13,7 +13,10 @@ public class Player {
     private Long id;
     private Double average;
 
+    private String timeOfLastResult;
+
     private String userName;
+
 
     @OneToMany(targetEntity = Result.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "playerfk", referencedColumnName = "id")
@@ -25,6 +28,15 @@ public class Player {
 
     public Player() {
 
+    }
+
+    public String  getTimeOfLastResult() {
+        return timeOfLastResult;
+    }
+
+    public void setTimeOfLastResult() {
+        Result result = new Result();
+        timeOfLastResult = result.getTimeDate();
     }
 
     public String getUserName() {
