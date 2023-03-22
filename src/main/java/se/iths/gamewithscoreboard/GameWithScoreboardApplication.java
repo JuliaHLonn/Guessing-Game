@@ -6,17 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GameWithScoreboardApplication implements CommandLineRunner {
+public class GameWithScoreboardApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GameWithScoreboardApplication.class, args);
     }
 
-    @Autowired
-    PlayerRepository repository;
-
-    @Override
-    public void run(String... args) throws Exception {
-       // repository.save(new Player());
-    }
 }

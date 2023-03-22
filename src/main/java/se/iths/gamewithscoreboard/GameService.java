@@ -8,9 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Stream;
 
-import static java.util.Comparator.comparing;
 
 @Service
 @SessionScope
@@ -74,19 +72,12 @@ public class GameService {
         player.addToList(result);
         player.setAverage();
         player = repository.save(player);
-        System.out.println(player.average);
+
     }
 
     public List<Player> displayScoreboard() {
         List<Player> list = repository.findAll();
-       // DEn nedan blir fel ordning
-      //  Collections.sort(list, (p1, p2) -> (int) (p1.getAverage() - p2.getAverage()));
-        Collections.sort(list, new Comparator<Player>() {
-                    @Override
-                    public int compare(Player o1, Player o2) {
-                        return Double.compare(o1.getAverage(), o2.getAverage());
-                    }
-                });
+        list.sort(Comparator.comparingDouble(p -> p.getAverage()));
                return list;
     }
 }

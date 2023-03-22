@@ -4,12 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Result {
-    int result = 0;
+    private int result = 0;
 
     @Id
     @GeneratedValue

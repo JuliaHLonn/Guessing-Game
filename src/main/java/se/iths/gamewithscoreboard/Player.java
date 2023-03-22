@@ -10,10 +10,10 @@ public class Player {
 
     @Id
     @GeneratedValue
-    Long id;
-    Double average;
+    private Long id;
+    private Double average;
 
-    String userName;
+    private String userName;
 
     @OneToMany(targetEntity = Result.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "playerfk", referencedColumnName = "id")
@@ -44,6 +44,8 @@ public class Player {
     }
 
     public Double getAverage() {
+        if(average == null)
+            return 0.0;
         return average;
     }
 
