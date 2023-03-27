@@ -7,12 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/*     Laboration 1
- * När man ska göra ändringar/ lägga till saker i en player i databasen måste vi ha tag i den
- * och inte objektet som skapats i intellij. save() returnerar playern som den skapar
- * p=rep.save(p) sparar objektet i databasen i p. Efter varje ändring på objektet i intellij
- * måste vi göra save så.
- * Findby ger också access till databas objektet.*/
 @Controller
 public class GameController {
 

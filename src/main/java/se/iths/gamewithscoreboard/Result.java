@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public class Result {
     private int result = 0;
 
-    private String timeDate;
+    private String timeOfResult;
     @Id
     @GeneratedValue
     private Long id;
@@ -20,12 +20,12 @@ public class Result {
     public Result() {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        timeDate = localDateTime.format(formatter);
+        timeOfResult = localDateTime.format(formatter);
 
     }
 
-    public String getTimeDate() {
-        return timeDate;
+    public String getTimeOfResult() {
+        return timeOfResult;
     }
 
     public int getResult() {

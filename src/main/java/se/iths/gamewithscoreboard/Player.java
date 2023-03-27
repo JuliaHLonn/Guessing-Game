@@ -36,7 +36,7 @@ public class Player {
 
     public void setTimeOfLastResult() {
         Result result = new Result();
-        timeOfLastResult = result.getTimeDate();
+        timeOfLastResult = result.getTimeOfResult();
     }
 
     public String getUserName() {
@@ -64,7 +64,15 @@ public class Player {
     public void addToList(Result result){
         resultList.add(result);
     }
-    public void setAverage() {
-        this.average = new CounterService().getAverageScore(resultList);
+    public void calculateAverage() {
+        double sum = 0;
+        if(resultList.isEmpty())
+            average = 0.0;
+        else {
+            for (Result result : resultList) {
+                sum = sum + result.getResult();
+            }
+            average = sum/resultList.size();
+        }
     }
 }

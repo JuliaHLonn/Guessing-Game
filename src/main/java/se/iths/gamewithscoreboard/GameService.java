@@ -70,7 +70,7 @@ public class GameService {
         player = findUser(user);
         player.addToList(result);
         player.setTimeOfLastResult();
-        player.setAverage();
+        player.calculateAverage();
         player = repository.save(player);
 
     }
